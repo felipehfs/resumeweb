@@ -61,8 +61,8 @@ module.exports = function(app) {
         secretOrKey: secret
     }, function(jwtpayload, cb){
         return model.User.findById(jwtpayload.id)
-            .then(user => {return 
-                cb(null, err) 
+            .then(user => {
+                return cb(null, err) 
             })
             .catch(err =>{
                 return cb(err)
